@@ -56,16 +56,29 @@ describe('List Orders by Customer EndPoint', () => {
     })
 });
 //test delete order endpoints
-describe('Create Order EndPoints', () => {
-  it('should delete an order in the list', async () => {
-    const res = await request(app)
-    .post('/customers/6035cc55989c031278d39093/orders/')
-    .send()
- 
-    const order_id = res.body[0]._id
-    res = await request(app)
-    .delete('orders/' + order_id)
+// describe('Create Order EndPoints', () => {
+//   it('should delete an order in the list', async () => {
+//     const res = await request(app)
+//     .post('/customers/6035cc55989c031278d39093/orders/')
+//     .send()
+//     const order_id = res.body[0]._id
+//     res = await request(app)
+//     .delete('orders/' + order_id)
+//     .send()
+//       expect(res.statusCode).toEqual(200)
+//     })
+// });
+
+//test update order endpoints
+describe('Update Order EndPoints', () => {
+  it('should update an existing order', async () => {
+      const res = await request(app)
+        .patch('/customers/6035cc55989c031278d39093/orders/6035d842676af0474073e3b5')
+        .send({
+          "description" : "update_test"
+        })
       expect(res.statusCode).toEqual(200)
+      expect(res.body.description).toBe("update_test")
     })
 });
 
