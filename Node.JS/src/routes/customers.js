@@ -25,4 +25,5 @@ const addressModel = require('../models/Address')
     })
 
  })
+
  module.exports = router

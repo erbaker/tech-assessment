@@ -13,7 +13,7 @@ describe('Home', () => {
     });  
   });
   describe('Create Customer EndPoints', () => {
-    it('should create a new post', async () => {
+    it('should create a new customer', async () => {
         const res = await request(app)
           .post('/customers/create')
           .send(customer_data[0])
@@ -27,9 +27,9 @@ describe('Home', () => {
         expect(res.body.phoneNumber).toBe(customer_data[0]['phoneNumber'])
       })
 });
-
+//test create order endpoints
 describe('Create Order EndPoints', () => {
-  it('should create a new post', async () => {
+  it('should create a new order', async () => {
       const res = await request(app)
         .post('/customers/6035cc55989c031278d39093/orders/create')
         .send({
@@ -42,6 +42,20 @@ describe('Create Order EndPoints', () => {
       expect(res.body.description).toBe("type_1")
     })
 });
+//tested order list by customer endpoint, didn't include length as it variable by the time running test suit
+describe('List Orders by Customer EndPoint', () => {
+  it('should list the orders of current customer', async () => {
+      const res = await request(app)
+        .post('/customers/6035cc55989c031278d39093/orders/')
+        .send()
+      expect(res.statusCode).toEqual(200)
+      expect(res.body[0]).toHaveProperty('_id')
+      expect(res.body[0]).toHaveProperty('customer')
+      expect(res.body[0]).toHaveProperty('_id')
+      expect(res.body[0]).toHaveProperty('order_date')
+    })
+});
+
 
 
 

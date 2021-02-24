@@ -30,4 +30,15 @@ router.post('/customers/:id/orders/create', async(req, res) => {
     })
  })
 
+ //list all orders by customer endpoint
+ router.post('/customers/:id/orders', async(req, res) => {
+    const customer_id = req.params.id
+    const orders = await orderModel.find({}).find({ customer: { $gte: customer_id} })
+    try{
+        res.send(orders)
+    }catch(err){
+        res.send(err)
+    }
+})
+
  module.exports = router
