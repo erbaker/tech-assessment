@@ -8,6 +8,9 @@ const env = require('dotenv/config')
 const PORT = process.env.PORT || 3000;
 app.use(express.json())
 
+const ordersRoute = require('./routes/orders')
+app.use('/', ordersRoute)
+
 const customerRoute = require('./routes/customers')
 app.use('/', customerRoute)
 

@@ -2,14 +2,7 @@ const express = require('express')
 const router = express.Router()
 const customerModel = require('../models/Customer')
 const addressModel = require('../models/Address')
-//Home
-router.get('/', (req, res) => {
-    res.json({
-        body: {
-       message: "Orders API Home"
-     }
- })
- })
+
 //added creating customers request for testing purposes
  router.post('/customers/create', (req, res) => {
     const address = new addressModel(req.body.address)
