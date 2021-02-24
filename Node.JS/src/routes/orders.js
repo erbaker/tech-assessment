@@ -40,5 +40,28 @@ router.post('/customers/:id/orders/create', async(req, res) => {
         res.send(err)
     }
 })
-
+ //update order endpoint
+ router.patch('/customers/:user_id/orders/:order_id', async(req, res) => {
+    const order_id = req.params.order_id
+    const order = await orderModel.findById(order_id)
+    order.description = req.body.description
+    order.save()
+    try{
+        res.send(order)
+    }catch(err){
+        res.send(err)
+    }
+})
+ //cancel order endpoint
+router.delete('/orders/:order_id', async(req, res) => {
+  const order_id = req.params.order_id
+  const delete_order = await orderModel.remove({
+      _id : order_id
+  })
+  try{
+    res.send(delete_order)
+   }catch(err){
+    res.send(err)
+  }
+})
  module.exports = router

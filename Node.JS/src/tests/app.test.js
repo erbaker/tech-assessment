@@ -55,7 +55,19 @@ describe('List Orders by Customer EndPoint', () => {
       expect(res.body[0]).toHaveProperty('order_date')
     })
 });
-
+//test delete order endpoints
+describe('Create Order EndPoints', () => {
+  it('should delete an order in the list', async () => {
+    const res = await request(app)
+    .post('/customers/6035cc55989c031278d39093/orders/')
+    .send()
+ 
+    const order_id = res.body[0]._id
+    res = await request(app)
+    .delete('orders/' + order_id)
+      expect(res.statusCode).toEqual(200)
+    })
+});
 
 
 
