@@ -3843,19 +3843,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mfy2242\\.nuget\\packages\\": {}
+    "C:\\Users\\rhg4311\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\rhg4311\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\mfy2242\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\rhg4311\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\rhg4311\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rhg4311\\Source\\Repos\\tech-assessment\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mfy2242\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rhg4311\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3864,14 +3864,16 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
+        "https://cunamutual.pkgs.visualstudio.com/_packaging/WebTeam/nuget/v3/index.json": {},
+        "https://pkgs.dev.azure.com/cunamutual/_packaging/Automation_Framework/nuget/v3/index.json": {},
         "https://pkgs.dev.azure.com/cunamutual/_packaging/LAH/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj": {
-              "projectPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj"
+            "C:\\Users\\rhg4311\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj": {
+              "projectPath": "C:\\Users\\rhg4311\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj"
             }
           }
         }

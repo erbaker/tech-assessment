@@ -1,4 +1,5 @@
 using CSharp.Controllers;
+using CSharp.Services;
 using NUnit.Framework;
 
 namespace ControllerTests
@@ -10,8 +11,7 @@ namespace ControllerTests
         [SetUp]
         public void Setup()
         {
-            sut = new OrdersController();
-
+            sut = new OrdersController(new OrdersService());
 
         }
 
