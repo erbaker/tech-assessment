@@ -10,12 +10,18 @@ namespace CSharp.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class Test : ControllerBase
+	public class OrdersController : ControllerBase
 	{ 
+		public OrdersController()
+        {
+
+        }
+
 		[HttpGet]
-		public string Get()
+		public List<Order> GetOrders()
 		{
-			return "Success!";
+			var orders = new List<Order>() { new Order() };
+			return orders;
 		}
 	}
 }

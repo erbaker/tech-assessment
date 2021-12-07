@@ -1,20 +1,78 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rhg4311\\source\\repos\\tech-assessment\\Tests\\Tests.csproj": {}
+    "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rhg4311\\source\\repos\\tech-assessment\\Tests\\Tests.csproj": {
+    "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rhg4311\\source\\repos\\tech-assessment\\Tests\\Tests.csproj",
-        "projectName": "Tests",
-        "projectPath": "C:\\Users\\rhg4311\\source\\repos\\tech-assessment\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\rhg4311\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rhg4311\\source\\repos\\tech-assessment\\Tests\\obj\\",
+        "projectUniqueName": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj",
+        "projectName": "CSharp",
+        "projectPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj",
+        "packagesPath": "C:\\Users\\mfy2242\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rhg4311\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mfy2242\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/cunamutual/_packaging/LAH/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\mfy2242\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mfy2242\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -23,14 +81,16 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://cunamutual.pkgs.visualstudio.com/_packaging/WebTeam/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/cunamutual/_packaging/Automation_Framework/nuget/v3/index.json": {},
           "https://pkgs.dev.azure.com/cunamutual/_packaging/LAH/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj": {
+                "projectPath": "C:\\Users\\mfy2242\\Source\\Repos\\tech-assessment\\CSharp\\CSharp.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
