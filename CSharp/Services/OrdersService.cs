@@ -1,9 +1,9 @@
-﻿using CSharp.Controllers;
+﻿using CSharp.Services.Models;
 using System.Collections.Generic;
 
 namespace CSharp.Services
 {
-    public class OrdersService
+    public class OrdersService : IOrdersService
     {
 
         List<Order> orders;

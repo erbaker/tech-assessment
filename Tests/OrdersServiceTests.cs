@@ -1,17 +1,17 @@
-using CSharp.Controllers;
+using CSharp.Services;
 using CSharp.Services;
 using NUnit.Framework;
 
-namespace ControllerTests
+namespace OrdersServiceTests
 {
-    public class ControllerTests
+    public class OrdersServiceTests
     {
-        OrdersController sut;
+        OrdersService sut;
 
         [SetUp]
         public void Setup()
         {
-            sut = new OrdersController(new OrdersService());
+            sut = new OrdersService();
 
         }
 

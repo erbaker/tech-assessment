@@ -1,4 +1,5 @@
-﻿namespace CSharp.Controllers
+﻿namespace CSharp.Services.Models
+
 {
     public class Order
     {
