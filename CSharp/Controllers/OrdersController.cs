@@ -25,5 +25,10 @@ namespace CSharp.Services
 		{
 			return ordersService.GetOrders();
 		}
-	}
+
+        public Order CreateOrder()
+        {
+			return ordersService.CreateOrder();
+        }
+    }
 }

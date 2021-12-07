@@ -14,6 +14,11 @@ namespace CSharp.Services
             
         }
 
+        public Order CreateOrder()
+        {
+            return new Order();
+        }
+
         public List<Order> GetOrders() 
         {
             orders = new List<Order>() { new Order() };

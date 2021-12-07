@@ -26,5 +26,15 @@ namespace OrdersControllerTests
         {
             Assert.IsTrue(_sut.GetOrders().Count > 0);
         }
+
+        [Test]
+        public void WhenCreateOrderThenReturnNewOrder()
+        {
+            var order = new Order();
+            // Mock out what the service should return when we ask for a new order
+            _ordersServiceMock.Setup(x => x.CreateOrder()).Returns(order);
+
+            Assert.AreEqual(order, _sut.CreateOrder());
+        }
     }
 }
