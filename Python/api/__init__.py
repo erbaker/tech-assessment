@@ -1,15 +1,34 @@
-# api/__init__.py
-
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restx import Resource, Api
+from api.config import DevelopmentConfig
 
-# create an instantiation of the Flask app
+# Create an instance of the Flask app
 app = Flask(__name__)
+app.config.from_object(DevelopmentConfig)
 
 api = Api(app)
 
-# set environment config here
-app.config.from_object('project.config.DevelopmentConfig')
+orders = []
+
+# Create order endpoint
+@api.route('/orders', methods=['POST'])
+class CreateOrder(Resource):
+    def post(self):
+        order = api.payload
+        orders.append(order)
+        return {'message': 'Order created successfully'}, 201
+    
+# Orders by customer endpoint
+@api.route('/orders/<customer_name>')
+class OrdersByCustomer(Resource):
+    def get(self, customer_name):
+        customer_orders = [order for order in orders if order['customerName'] == customer_name]
+        return {'orders': customer_orders}
+    
+# Update order endpoint
+
+# Cancel order endpoint
+
 
 class Health(Resource):
     def get(self):

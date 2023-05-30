@@ -1,7 +1,5 @@
-# manage.py
-
 from flask.cli import FlaskGroup
-from project import app
+from api import app
 
 cli = FlaskGroup(app)
 
