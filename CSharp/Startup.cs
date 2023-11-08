@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using CSharp.Repository;
+using CSharp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +29,17 @@ namespace CSharp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddMvc();
+            string connectionString = "DataSource=myshareddb;mode=memory;cache=shared";
+            var keepAliveConnection = new SqliteConnection(connectionString);
+            keepAliveConnection.Open();
+
+            services.AddDbContext<IOrdersContext, OrdersContext>(options =>
+            {
+                options.UseSqlite(connectionString);
+            });
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
 			services.AddControllers();
 		}
 
