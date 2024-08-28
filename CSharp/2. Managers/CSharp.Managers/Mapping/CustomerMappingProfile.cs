@@ -8,6 +8,9 @@ namespace CSharp.Managers.Mapping
         public CustomerMappingProfile()
         {
             CreateMap<Customer, Accessors.DataTransferObjects.Customer>()
+                .ForMember(
+                    memberOption => memberOption.CustomerId,
+                    destinationMember => destinationMember.Ignore())
                 .ReverseMap();
         }
     }
