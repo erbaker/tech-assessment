@@ -14,5 +14,10 @@ namespace CSharp.Managers
             return orderAccessor
                 .CreateOrder(orderDataTransferObject);
         }
+
+        public List<Order> GetOrders(int customerId)
+        {
+            return mapper.Map<List<Order>>(orderAccessor.GetOrders(customerId));
+        }
     }
 }

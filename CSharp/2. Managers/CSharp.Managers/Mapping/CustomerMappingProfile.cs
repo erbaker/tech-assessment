@@ -7,7 +7,8 @@ namespace CSharp.Managers.Mapping
     {
         public CustomerMappingProfile()
         {
-            CreateMap<Customer, Accessors.DataTransferObjects.Customer>();
+            CreateMap<Customer, Accessors.DataTransferObjects.Customer>()
+                .ReverseMap();
         }
     }
 }

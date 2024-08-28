@@ -16,7 +16,7 @@ namespace CSharp.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Create")]
-        public IActionResult CreateOrderAsync(Order order)
+        public IActionResult CreateOrder(Order order)
         {
             var result = orderManager
                 .CreateOrderAsync(order);
@@ -34,9 +34,15 @@ namespace CSharp.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("Get")]
-        public async Task<IActionResult> GetOrdersAsync(int? customerId)
+        public async Task<IActionResult> GetOrders(int customerId)
         {
-            return Ok();
+            var result = orderManager
+                .GetOrders(customerId);
+
+            return Ok(new
+            {
+                orders = result
+            });
         }
 
         [HttpPut]

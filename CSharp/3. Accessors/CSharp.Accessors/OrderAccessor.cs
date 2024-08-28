@@ -46,6 +46,13 @@ namespace CSharp.Accessors
             return true;
         }
 
+        public List<Order> GetOrders(int customerId)
+        {
+            return Orders
+                .Where(order => order.Customer.CustomerId == customerId)
+                .ToList();
+        }
+
         /// <summary>
         /// Allows for a running list of orders to be tracked for the sake of this exercise. Time permitting
         /// this could be controlled through a database provider such as Entity Framework.

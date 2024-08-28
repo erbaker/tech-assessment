@@ -10,5 +10,12 @@ namespace CSharp.Accessors
         /// <param name="order"></param>
         /// <returns></returns>
         bool CreateOrder(Order order);
+
+        /// <summary>
+        /// Returns a list of Orders associtated with the requested Customer Id.
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        List<Order> GetOrders(int customerId);
     }
 }

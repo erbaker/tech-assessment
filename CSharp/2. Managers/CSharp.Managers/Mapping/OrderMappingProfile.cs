@@ -7,7 +7,8 @@ namespace CSharp.Managers.Mapping
     {
         public OrderMappingProfile()
         {
-            CreateMap<Order, Accessors.DataTransferObjects.Order>();
+            CreateMap<Order, Accessors.DataTransferObjects.Order>()
+                .ReverseMap();
         }
     }
 }

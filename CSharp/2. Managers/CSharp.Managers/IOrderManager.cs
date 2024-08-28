@@ -10,5 +10,12 @@ namespace CSharp.Managers
         /// <param name="order"></param>
         /// <returns></returns>
         bool CreateOrderAsync(Order order);
+
+        /// <summary>
+        /// Returns a list of Order view models associated with the requested customer id.
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        List<Order> GetOrders(int customerId);
     }
 }
