@@ -1,7 +1,14 @@
-﻿namespace CSharp.Managers
+﻿using CSharp.Managers.ViewModels;
+
+namespace CSharp.Managers
 {
     public interface IOrderManager
     {
-        Task<bool> CreateOrderAsync();
+        /// <summary>
+        /// Maps the incoming <see cref="Order"/> to a Data transfer object to create a new order.
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        bool CreateOrderAsync(Order order);
     }
 }

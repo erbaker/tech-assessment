@@ -1,13 +1,18 @@
-﻿using CSharp.Accessors;
+﻿using AutoMapper;
+using CSharp.Accessors;
+using CSharp.Managers.ViewModels;
 
 namespace CSharp.Managers
 {
-    public class OrderManager(IOrderAccessor orderAccessor) : IOrderManager
+    public class OrderManager(IMapper mapper, IOrderAccessor orderAccessor) : IOrderManager
     {
-        public async Task<bool> CreateOrderAsync()
+        public bool CreateOrderAsync(Order order)
         {
-            return await orderAccessor
-                .CreateOrderAsync();
+            var orderDataTransferObject = mapper
+                .Map<Accessors.DataTransferObjects.Order>(order);
+
+            return orderAccessor
+                .CreateOrder(orderDataTransferObject);
         }
     }
 }

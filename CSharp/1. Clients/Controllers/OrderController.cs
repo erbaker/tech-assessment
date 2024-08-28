@@ -16,12 +16,15 @@ namespace CSharp.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> CreateOrderAsync(Order order)
+        public IActionResult CreateOrderAsync(Order order)
         {
-            var result = await orderManager
-                .CreateOrderAsync();
+            var result = orderManager
+                .CreateOrderAsync(order);
 
-            return Ok(result);
+            return Ok(new
+            {
+                success = result
+            });
         }
 
         /// <summary>

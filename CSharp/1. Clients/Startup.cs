@@ -1,5 +1,6 @@
 using CSharp.Accessors;
 using CSharp.Managers;
+using CSharp.Managers.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,8 +24,17 @@ namespace CSharp
 			services.AddControllers();
 			services.AddSwaggerGen();
 
-			services.AddTransient<IOrderManager, OrderManager>();
+			// Allows IMapper to be injected through dependency injection using the defined mapping profiles.
+            services.AddAutoMapper(mapperConfiguration =>
+			{
+				mapperConfiguration.AddProfile(typeof(AddressMappingProfile));
+				mapperConfiguration.AddProfile(typeof(CustomerMappingProfile));
+				mapperConfiguration.AddProfile(typeof(OrderMappingProfile));
+			});
+
+            services.AddTransient<IOrderManager, OrderManager>();
 			services.AddTransient<IOrderAccessor, OrderAccessor>();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
