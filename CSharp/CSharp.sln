@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp", "CSharp.csproj", "{133A1B4B-2712-496B-B272-9014FC68D5BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "1. Clients\CSharp.csproj", "{133A1B4B-2712-496B-B272-9014FC68D5BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Clients", "1. Clients", "{13C67A25-12B9-40E8-8E57-F3DE4083782A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Managers", "2. Managers", "{AF7DC81D-A7B8-4FCA-958B-9D972BA3B3FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Managers", "2. Managers\CSharp.Managers\CSharp.Managers.csproj", "{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Accessors", "3. Accessors", "{85B2C0B7-18F6-4C3C-85F3-1F762450547E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Accessors", "3. Accessors\CSharp.Accessors\CSharp.Accessors.csproj", "{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,22 @@ Global
 		{133A1B4B-2712-496B-B272-9014FC68D5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{133A1B4B-2712-496B-B272-9014FC68D5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{133A1B4B-2712-496B-B272-9014FC68D5BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{133A1B4B-2712-496B-B272-9014FC68D5BB} = {13C67A25-12B9-40E8-8E57-F3DE4083782A}
+		{ABA0A21B-2A14-4DEF-90CC-E13A7C2B8F66} = {AF7DC81D-A7B8-4FCA-958B-9D972BA3B3FD}
+		{BD67ECA9-754D-49A7-9C48-D0CA6E52B77F} = {85B2C0B7-18F6-4C3C-85F3-1F762450547E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43A1D056-FE2E-4552-B18C-94241C34103E}
