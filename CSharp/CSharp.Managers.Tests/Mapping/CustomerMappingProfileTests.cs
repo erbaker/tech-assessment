@@ -60,5 +60,37 @@ namespace CSharp.Managers.Tests.Mapping
                 Assert.That(customerDataTransferObject.PhoneNumber, Is.EqualTo(PhoneNumber));
             });
         }
+
+        [Test]
+        public void Customer_DataTransferObject_To_ViewModel_ShouldMap()
+        {
+            // Arrange
+            const string FirstName = "Yoshi";
+            const string LastName = "Cat";
+            const int Age = 8;
+            const string PhoneNumber = "9876543210";
+
+            var customerDataTransferObject = new Accessors.DataTransferObjects.Customer
+            {
+                Address = new Accessors.DataTransferObjects.Address(),
+                Age = Age,
+                FirstName = FirstName,
+                LastName = LastName,
+                PhoneNumber = PhoneNumber
+            };
+
+            // Act
+            var customerViewModel = Mapper.Map<ViewModels.Customer>(customerDataTransferObject);
+
+            // Assert
+            Assert.Multiple(() =>
+            {
+                Assert.That(customerViewModel.Address, Is.Not.Null);
+                Assert.That(customerViewModel.Age, Is.EqualTo(Age));
+                Assert.That(customerViewModel.FirstName, Is.EqualTo(FirstName));
+                Assert.That(customerViewModel.LastName, Is.EqualTo(LastName));
+                Assert.That(customerViewModel.PhoneNumber, Is.EqualTo(PhoneNumber));
+            });
+        }
     }
 }
