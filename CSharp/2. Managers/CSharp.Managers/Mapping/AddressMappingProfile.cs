@@ -7,7 +7,7 @@ namespace CSharp.Managers.Mapping
         public AddressMappingProfile()
         {
             CreateMap<ViewModels.Address, Accessors.DataTransferObjects.Address>()
-                .ReverseMap(); ;
+                .ReverseMap();
         }
     }
 }
