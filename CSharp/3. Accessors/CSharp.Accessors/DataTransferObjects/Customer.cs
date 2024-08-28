@@ -2,6 +2,8 @@
 {
     public class Customer
     {
+        public int CustomerId { get; set; } = 0;
+
         public string FirstName { get; set; } = string.Empty;
 
         public string LastName { get; set; } = string.Empty;

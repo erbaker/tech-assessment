@@ -14,6 +14,33 @@ namespace CSharp.Accessors
             order.OrderId = nextOrderId;
             order.IsActive = true;
 
+            // Check if the customer exists, if so, append the customer id so their orders can be linked.
+            var existingCustomer = Orders
+                .Where(existingOrder => existingOrder.Customer.FirstName == order.Customer.FirstName &&
+                                        existingOrder.Customer.LastName == order.Customer.LastName)
+                .Select(existingOrder => existingOrder.Customer)
+                .FirstOrDefault();
+
+            // If they are an existing customer, then use their information with the CustomerID provided.
+            if (existingCustomer != null)
+            {
+                order.Customer = existingCustomer;
+            }
+            else
+            {
+                var existingCustomers = Orders
+                    .Select(existingOrders => existingOrders.Customer)
+                    .ToList();
+
+                var nextCustomerId = existingCustomers
+                    .OrderBy(customer => customer.CustomerId)
+                    .Last()
+                    .CustomerId;
+
+                order.Customer.CustomerId = nextCustomerId + 1;
+            }
+
+
             Orders.Add(order);
 
             return true;
@@ -32,6 +59,7 @@ namespace CSharp.Accessors
                 OrderTotal = 250.00m,
                 Customer = new Customer
                 {
+                    CustomerId = 1,
                     FirstName = "Test",
                     LastName = "Testerson",
                     Age = 30,
@@ -52,6 +80,7 @@ namespace CSharp.Accessors
                 OrderTotal = 1000.00m,
                 Customer = new Customer
                 {
+                    CustomerId = 1,
                     FirstName = "Test",
                     LastName = "Testerson",
                     Age = 30,
@@ -72,6 +101,7 @@ namespace CSharp.Accessors
                 OrderTotal = 45.00m,
                 Customer = new Customer
                 {
+                    CustomerId = 2,
                     FirstName = "Peach",
                     LastName = "Dog",
                     Age = 3,
