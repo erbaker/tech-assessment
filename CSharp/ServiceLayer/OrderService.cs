@@ -1,8 +1,8 @@
-﻿using CSharp.Models;
+﻿using OrdersApi.Models;
 using System.Collections.Generic;
-using CSharp.Data;
+using OrdersApi.Data;
 
-namespace CSharp.Services
+namespace OrdersApi.Services
 {
     public class OrderService : IOrderService
     {

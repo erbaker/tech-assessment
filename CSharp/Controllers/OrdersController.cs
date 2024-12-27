@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using CSharp.Services;
-using CSharp.Models;
+using OrdersApi.Services;
+using OrdersApi.Models;
 
-namespace YourApp.Controllers
+namespace OrdersApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
