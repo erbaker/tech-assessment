@@ -38,6 +38,15 @@ namespace OrdersApi.Services
 
         public bool CancelOrder(int id)
         {
+            var order = _orderDataStore.GetById(id);
+            if (order != null) {
+                if(order.Status != "Pending")
+                {
+                    return false;
+                }
+            }
+
+
             return _orderDataStore.Delete(id);
         }
 
