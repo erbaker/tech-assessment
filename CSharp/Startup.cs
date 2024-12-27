@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using CSharp.Data;
+using CSharp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +27,21 @@ namespace CSharp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddScoped<IOrderDataStore, OrderDataStore>();
+			services.AddScoped<IOrderService, OrderService>();
+
+			services.AddSwaggerGen(c =>
+			{
+				c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+				{
+					Title = "Order API",
+					Version = "v1",
+					Description = "A simple example API"
+				});
+			});
+
 			services.AddControllers();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,13 +50,21 @@ namespace CSharp
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
+
+				app.UseSwagger();
+
+				app.UseSwaggerUI(c =>
+				{
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Order API V1");
+                    c.RoutePrefix = "swagger"; // Swagger UI will be at the root
+                });
 			}
 
-			app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
 			app.UseRouting();
 
-			app.UseAuthorization();
+			//app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
