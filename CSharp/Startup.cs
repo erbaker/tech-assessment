@@ -30,6 +30,16 @@ namespace CSharp
 			services.AddScoped<IOrderDataStore, OrderDataStore>();
 			services.AddScoped<IOrderService, OrderService>();
 
+			services.AddSwaggerGen(c =>
+			{
+				c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+				{
+					Title = "Order API",
+					Version = "v1",
+					Description = "A simple example API"
+				});
+			});
+
 			services.AddControllers();
 
 		}
@@ -40,13 +50,21 @@ namespace CSharp
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
-            }
 
-			app.UseHttpsRedirection();
+				app.UseSwagger();
+
+				app.UseSwaggerUI(c =>
+				{
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Order API V1");
+                    c.RoutePrefix = "swagger"; // Swagger UI will be at the root
+                });
+			}
+
+            app.UseHttpsRedirection();
 
 			app.UseRouting();
 
-			app.UseAuthorization();
+			//app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
