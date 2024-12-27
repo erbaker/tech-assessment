@@ -50,7 +50,7 @@ A simple REST API for managing orders, built with .NET Core 3.1.
    - **HTTPS**: `https://localhost:5001`
 
 3. To view the Swagger UI, open your browser and navigate to:
-   - **Swagger UI**: `https://localhost:5001` (for HTTPS)
+   - **Swagger UI**: `https://localhost:5001/swagger/index.html` (for HTTPS)
 
    Swagger will allow you to interact with the API endpoints via a user-friendly interface.
 
