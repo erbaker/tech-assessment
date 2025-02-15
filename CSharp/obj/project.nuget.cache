@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "hRq5LE32FM5X20XYCn9zH+W2k6hUaPkSWKpnIm6CVZsfcU30JAo76QWHUCTUWUaRxWUvJSo8Dmlgrubv+hq6vg==",
+  "dgSpecHash": "tdW6fb2MXtA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\wassi\\Documents\\Sogeti\\tech-assessment\\CSharp\\CSharp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\DHaggadone\\source\\repostest\\tech-assessment\\CSharp\\CSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\nlog\\5.4.0\\nlog.5.4.0.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\swashbuckle.aspnetcore\\7.2.0\\swashbuckle.aspnetcore.7.2.0.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.2.0\\swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.2.0\\swashbuckle.aspnetcore.swaggergen.7.2.0.nupkg.sha512",
+    "C:\\Users\\DHaggadone\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.2.0\\swashbuckle.aspnetcore.swaggerui.7.2.0.nupkg.sha512"
+  ],
   "logs": []
 }
